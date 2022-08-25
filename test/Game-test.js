@@ -30,6 +30,10 @@ let game;
         game.start()
         expect(game.currentRound).to.be.an.instanceof(Round)
     })
+    it('should print a welcome message', function() {
+        game.start()
+        expect
+    })
 
 
 
