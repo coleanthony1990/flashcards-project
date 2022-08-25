@@ -10,21 +10,20 @@ class Round {
     }
     returnCurrentCard() {
         return this.currentCard
+        
     }
     takeTurn(guess) {
-        this.turn = new Turn(guess, this.currentCard)
         this.turnCount++
-        this.deck.cards.shift()
+        this.turn = new Turn(guess, this.currentCard)
         if(this.turn.guess !== this.currentCard.correctAnswer) {
             this.incorrectGuesses.push(this.currentCard.id)
         }
+        this.deck.cards.shift()
+        this.currentCard = this.deck.cards[0]
         return this.turn.giveFeedback()
-        
     }
     calculatePercentCorrect() {
-        return this.incorrectGuesses.length/this.turnCount * 100 + '%'
-        
-    }
-    
+        return 100 - (this.incorrectGuesses.length/this.turnCount * 100) + '%'
+    }  
 }
 module.exports = Round
