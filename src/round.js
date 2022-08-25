@@ -14,21 +14,17 @@ class Round {
     takeTurn(guess) {
         this.turn = new Turn(guess, this.currentCard)
         this.turnCount++
-        
+        this.deck.cards.shift()
         if(this.turn.guess !== this.currentCard.correctAnswer) {
             this.incorrectGuesses.push(this.currentCard.id)
-            console.log(this.incorrectGuesses)
         }
-        this.deck.cards.shift()
         return this.turn.giveFeedback()
         
-
-
-
-
-
-
-
     }
+    calculatePercentCorrect() {
+        return this.incorrectGuesses.length/this.turnCount * 100 + '%'
+        
+    }
+    
 }
 module.exports = Round
