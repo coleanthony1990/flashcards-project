@@ -1,71 +1,36 @@
-# FlashCards Starter Kit
+# Flashcards
 
-## Fork This Repo
-
-On the top right corner of this page, click the **Fork** button.
-
-## Setup
-
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
-
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
-
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
-
-```bash
-npm install
-```
-
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
-
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
-
-```bash
-Your project is running...
-```
-
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
-
-
-## Where to Add Your Code
-
-### JavaScript
-
-**Create all of your feature code files in the `src` directory.**
-
-We will be using the `module.exports` and `require` syntax to share code across files.
-
-## How to View Your Code in Action
-
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
-
+## Table of Contents
 ---
+- [Introduction](#Introduction)
+- [Resources](#Resources)
+- [Technologies](#Technologies)
+- [The Game](#The-Game)
+- [Screen Shots](#Screen-Shots)
+- [Future Additions](#Future-Additions)
+- [Reflections](#Reflections)
+- [Project Spec](#Project-Spec)
+---
+## Introduction
 
-## Test Files Organization
+I , [Cole Anthony](https://www.linkedin.com/in/cole-edwin-anthony/) wrote this game of flashcards that uses questions about Javascript and is meant to be played in the terminal. The game can be cloned here: https://github.com/coleanthony1990/flashcards-project.git
 
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
+## Resources
+- Resources include [MDN](https://developer.mozilla.org/en-US/) and [Stack Overflow](https://stackoverflow.com/).
 
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
-
+## Technologies
+- TDD
+- Chai
+- Mocha
+- Node
+- Javascript
+## Playing Flashcards
+After initializing the game with the commend `node index.js`, the player is given a question with a set of possible answers and the player must choose the right one by it's index value. the game will tell you if your choice is correct or incorrect and it will give you a score at the end of the game.
+## The Game
+![giphy](https://user-images.githubusercontent.com/103971359/186785004-09cf84a6-527a-4b0a-b9c7-fb29c581e143.gif)
+## Future Additions
+I would like to add a timer in the future as well as a report card and more questions or different questions.
+## Reflections
+I found that writing tests came pretty quickly but figuring out what to test for was more difficult. Writing the tests definitely helped me write more efficient code because I was only trying to write code to pass the tests.
+## Project Spec
+The project spec and rubric is linked [here](https://frontend.turing.edu/projects/flash-cards.html).
