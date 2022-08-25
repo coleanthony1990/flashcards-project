@@ -69,6 +69,15 @@ describe('Round', function() {
 
         expect(round.calculatePercentCorrect()).to.equal('75%')
     })
+    it('should be able to end the round', function() {
+        round.takeTurn('object')
+        round.takeTurn('array')
+        round.takeTurn('mutator method')
+        round.takeTurn('Serena Williams')
+        
+        expect(round.endRound()).to.equal('** Round over! ** You answered 75% of the questions correctly!')
+
+    })
 
 })
 
