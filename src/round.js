@@ -3,8 +3,8 @@ const Deck = require('../src/deck');
 
 class Round {
     constructor(deck) {
-        this.deck = deck
-        this.currentCard = deck.cards[0]
+        this.deck = new Deck(deck)
+        this.currentCard = this.deck.cards[0]
         this.turnCount = 0
         this.incorrectGuesses = []
     }
