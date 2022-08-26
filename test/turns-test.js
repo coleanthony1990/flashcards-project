@@ -11,13 +11,13 @@ describe('Turn', function() {
     })
     it ('Should be an instance of Turn', function() {
         const turn = new Turn()
-        
+
         expect(turn).to.be.an.instanceof(Turn)
     })
     
     it ('should have a guess', function() {
         const turn = new Turn('object')
-
+        
         expect(turn.guess).to.equal('object')
     })
 
@@ -31,11 +31,15 @@ describe('Turn', function() {
     it('Should return the guess', function() {
         const turn = new Turn('Hello World')
 
+        turn.returnGuess()
+
         expect(turn.returnGuess()).to.equal("Hello World")
     })
     it('Should return the card', function() {
         const card = new Card(2, 'What is a comma-separated list of related values?', ["array", "object", "function"], 'array')
         const turn = new Turn('array', card)
+
+        turn.returnCard()
 
         expect(turn.returnCard()).to.be.an.instanceof(Card)    
     })
@@ -44,6 +48,9 @@ describe('Turn', function() {
         const turn1 = new Turn('array', card)
         const turn2 = new Turn('object', card)
 
+        turn1.evaluateGuess()
+        turn2.evaluateGuess()
+
         expect(turn1.evaluateGuess()).to.equal(true)
         expect(turn2.evaluateGuess()).to.equal(false)
     })
@@ -51,6 +58,9 @@ describe('Turn', function() {
         const card = new Card(2, 'What is a comma-separated list of related values?', ["array", "object", "function"], 'array')
         const turn1 = new Turn('array', card)
         const turn2 = new Turn('object', card)
+
+        turn1.giveFeedback()
+        turn2.giveFeedback()
 
         expect(turn1.giveFeedback()).to.equal('Correct!')
         expect(turn2.giveFeedback()).to.equal('Incorrect!')
